@@ -1,8 +1,0 @@
-{% extends "base_atom.xml" %}
-
-{% block entries %}
-
-{% include "base_atomquotelist.xml" %}
-
-{% endblock %}
-
