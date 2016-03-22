@@ -44,14 +44,24 @@ print()
 url = input("Enter a url || key" + "\n")
 
 
+def relaunch():
+    args = "" # must declare first
+    for i in sys.argv:
+        args = args + " " + str(i) # force casting to strings with str() to concatenate
+    print("Open.py" + args) # print what would we run
+    os.system("Open.py" + args) # do it!
+
+    
 if "." in url:
 	chrome(url)
 elif (url in sites.keys()):
 	chrome(sites[url])
-elif (not isinstance(url, str) and int(url) in sites.keys()):
+elif (isinstance(url, str) and int(url) in sites.keys()):
 	chrome(sites[int(url)])
 else: 
 	print("Not sure what you're trying to put...\n ~~ Restarting... ~~")
 	time.sleep(3)
 	print()
-	os.system("python Open.py")
+	# relaunch()
+	# os.system("python Open.py")
+
