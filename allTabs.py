@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import webbrowser
 import os
 import sys
@@ -17,7 +18,7 @@ def addTab():
 		else:
 			print("Is this a URL? Does not contain " +checker+ " Try again.")
 #--------------------Begin--------------------------
-#Remove all urls with substring hentai/porn
+#Remove all irrevelant urls
 '''
 def chrome(url):
 	webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open(url)
