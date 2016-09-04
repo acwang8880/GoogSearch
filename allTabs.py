@@ -18,17 +18,20 @@ def addTab():
 		else:
 			print("Is this a URL? Does not contain " +checker+ " Try again.")
 #--------------------Begin--------------------------
-#Remove all irrevelant urls
+#Remove all irrevelant
 '''
 def chrome(url):
 	webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open(url)
 '''
-
-path = "C:/Users/Alex/Projects/GoogSearch/recover.txt"
+#change path to recover.txt location
+path = "C:/Users/Alex Wang/Projects/GoogSearch/recover.txt"
 totalLines = 0
 my_urls = []
 
-
+# if not os.path.exits security concerns
+if not os.path.isfile(path):
+	file = open("recover.txt", "w")
+	file.close()
 
 if len(sys.argv) == 2:
 	addTab()
