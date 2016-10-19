@@ -1,4 +1,5 @@
-#!/usr/bin/python3
+
+# !/usr/bin/env python
 import webbrowser
 import os
 import sys
@@ -25,6 +26,7 @@ def chrome(url):
 '''
 #change path to recover.txt location
 path = "C:/Users/Alex Wang/Projects/GoogSearch/recover.txt"
+path = "G:/session_buddy_export_2016_10_14_02_08_43.txt"
 totalLines = 0
 my_urls = []
 
@@ -50,14 +52,18 @@ else :
 
 
 	ans = ""
-	while ans.lower() != "o" and ans.lower() != "a" and ans.lower() != "d" and ans.lower() != "x":
-		ans = input("Open (O) | Add Entry (A) | Delete Entry (D) | Cancel (X): ")
+	while ans.lower() != "oa" and ans.lower() != "o" and ans.lower() != "a" and ans.lower() != "d" and ans.lower() != "x":
+		ans = input("Open All (OA) | Open Entry (O) | Add Entry (A) | Delete Entry (D) | Cancel (X): ")
 		ans = ans.lower()
 	
-	if ans.lower() == "o":
-
+	if ans.lower() == "oa":
 		for line in my_urls:
 			os.startfile(line)	
+
+	elif ans.lower() == "o":
+		ans = input("Enter an Entry Num: ")
+		entry = int(ans)
+		os.startfile(my_urls[entry])
 
 	elif ans.lower() == "a":
 		file.close()
@@ -75,9 +81,13 @@ else :
 		file.writelines(my_urls)
 		
 	elif ans.lower() == "x":
-		ans = input("Press Enter to exit.")
+		print("")
+		# ans = input("Press Enter to exit.")
 
 	else:
 		ans = input("Invalid option. Exiting.....press Enter")
 
 	file.close()
+
+	
+	
