@@ -25,8 +25,9 @@ def chrome(url):
 	webbrowser.get("C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s").open(url)
 '''
 #change path to recover.txt location
-path = "C:/Users/Alex Wang/Projects/GoogSearch/recover.txt"
-path = "G:/session_buddy_export_2016_10_14_02_08_43.txt"
+path = "C:/Users/Alex Wang/projects/GoogSearch/recover.txt"
+# path = "./recover.txt"
+# path = "G:/session_buddy_export_2016_10_14_02_08_43.txt"
 totalLines = 0
 my_urls = []
 
